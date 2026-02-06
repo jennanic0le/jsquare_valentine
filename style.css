@@ -103,8 +103,6 @@ body.love-mode #songcredit {
   opacity: 0.85;
 }
 
-
-
 /* Hearts layer */
 #hearts {
   position: fixed;
@@ -117,11 +115,24 @@ body.love-mode #songcredit {
   position: absolute;
   left: var(--x);
   bottom: -50px;
-  font-size: var(--size);
+
+  /* ✅ NEW: size the heart container so SVG works everywhere */
+  width: var(--size);
+  height: var(--size);
+
+  /* keep color controlled by JS/CSS */
   color: var(--color);
+
   filter: drop-shadow(0 8px 10px rgba(0,0,0,0.18));
   transform: rotate(var(--rot));
   animation: floatUp var(--dur) ease-in forwards;
+}
+
+/* ✅ NEW: make SVG fill the heart box & inherit color */
+.heart svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 @keyframes floatUp {
