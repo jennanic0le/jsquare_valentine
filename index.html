@@ -3,24 +3,118 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>J^2 Valentine</title>
+  <title>Valentine Page</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="stage">
-    <button id="pressBtn">Press Me</button>
-    <div id="loveText">Happy Valentine!</div>
-    <div id="songcredit">Soft Spot - Keshi</div>
-  </div>
-
+  <!-- Floating hearts (always behind) -->
   <div id="hearts"></div>
   <div class="glow"></div>
 
- 
+  <!-- ========================= -->
+  <!-- INTRO OVERLAY (password + question) -->
+  <!-- ========================= -->
+  <div id="introOverlay" class="overlay" aria-modal="true" role="dialog">
+    <div class="panel">
+      <h1 class="panel-title">Access Required 💌</h1>
+
+      <!-- Password phases -->
+      <form id="passwordForm" class="pw-form">
+        <label id="pwLabel" class="pw-label" for="pwInput">Enter Password:</label>
+        <input
+          id="pwInput"
+          class="pw-input"
+          type="text"
+          inputmode="text"
+          autocomplete="off"
+          placeholder="type here..."
+          required
+        />
+        <button class="primary-btn" type="submit">Submit</button>
+        <p id="pwMessage" class="pw-message" aria-live="polite"></p>
+      </form>
+
+      <!-- Valentine question -->
+      <div id="questionBox" class="question-box hidden" aria-live="polite">
+        <h2 class="question-title">Will you be my Valentine? 💘</h2>
+
+        <div class="btn-row">
+          <button id="yesBtn" class="yes-btn" type="button">Yes</button>
+          <button id="noBtn" class="no-btn" type="button">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================= -->
+  <!-- HERO / INTRO (visible after YES) -->
+  <!-- ========================= -->
+  <header class="hero">
+    <div class="hero-text">
+      <h1 id="loveText" class="title">Happy Valentine!</h1>
+      <p id="subtitle" class="subtitle">Scroll for memories 💗</p>
+      <div id="songcredit" class="songcredit">Soft Spot - Keshi</div>
+    </div>
+  </header>
+
+  <!-- ✅ Audio -->
   <audio id="loveSong" preload="auto">
     <source src="./resource/Soft%20Spot-Keshi.mp3" type="audio/mpeg" />
-    Your browser does not support the audio element.
   </audio>
+
+  <!-- ========================= -->
+  <!-- MAIN CONTENT (scroll) -->
+  <!-- ========================= -->
+  <main id="content" class="content">
+
+    <section class="card reveal">
+      <h2>To My Valentine 💖</h2>
+      <p>Thank you for being so sweet and caring!</p>
+    </section>
+
+    <section class="gallery">
+      <figure class="photo reveal">
+        <img src="./resource/christmasbulb.jpg" alt="Memory 1" />
+        <figcaption>Our First Christmas time together! ✨</figcaption>
+      </figure>
+
+      <figure class="photo reveal">
+        <img src="./resource/facemask.jpg" alt="Memory 2" />
+        <figcaption>Love the care we have for eachother even for our face! 💗</figcaption>
+      </figure>
+
+      <figure class="photo reveal">
+        <img src="./resource/heartssc.JPG" alt="Memory 3" />
+        <figcaption>For the season of love 💜</figcaption>
+      </figure>
+
+      <figure class="photo reveal">
+        <img src="./resource/sassaypose.jpg" alt="Memory 4" />
+        <figcaption>More adventures soon 💙</figcaption>
+      </figure>
+    </section>
+
+    <section class="card reveal">
+      <h2>Little Things I Love</h2>
+      <ul class="list">
+        <li>Your smile</li>
+        <li>Your laugh</li>
+        <li>How gentle you are</li>
+        <li>How you make me feel special</li>
+        <li>How we can be ourselves</li>
+      </ul>
+    </section>
+
+    <section class="card reveal">
+      <h2>Always & Forever</h2>
+      <h3>Happy Valentine’s Day. I love you.</h3>
+      <p>I hope you enjoyed the music! Hope it can stay up before someone sees it 😬😅 </p>
+    </section>
+
+    <footer class="footer">
+      <small>Made by Jenna with love</small>
+    </footer>
+  </main>
 
   <script src="script.js"></script>
 </body>
