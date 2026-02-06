@@ -112,7 +112,7 @@ passwordForm.addEventListener("submit", (e) => {
       return;
     }
 
-    pwLabel.textContent = "Try Again:";
+    pwLabel.textContent = "Try again:";
     pwInput.value = "";
     pwInput.focus();
     phase = 3;
